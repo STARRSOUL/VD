@@ -1,0 +1,387 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 30%, #f48fb1 70%, #e91e63 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.romantic-font {
+  font-family: 'Dancing Script', cursive;
+}
+
+.heart-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.sparkle {
+  animation: sparkle 2s linear infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0; 
+    transform: scale(0) rotate(0deg); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1) rotate(180deg); 
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+.romantic-glow {
+  text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+}
+
+.valentine-button {
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.valentine-button:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4);
+}
+
+.valentine-button:active {
+  transform: scale(0.95);
+}
+
+.yes-button {
+  background: linear-gradient(45deg, #e91e63, #f06292);
+  color: white;
+}
+
+.maybe-button {
+  background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Ensure smooth touch interactions */
+  touch-action: manipulation;
+  /* Add subtle automatic pulse animation */
+  animation: mobilePulse 4s infinite;
+}
+
+.maybe-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s;
+  opacity: 0;
+}
+
+.maybe-button:hover::before {
+  animation: shimmer 0.6s ease-in-out;
+}
+
+.maybe-button:hover {
+  background: linear-gradient(45deg, #ff6b6b, #ff4757) !important;
+  transform: scale(1.05) translateY(-3px) rotate(2deg) !important;
+  box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4) !important;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Add a subtle shake animation on hover */
+.maybe-button:hover {
+  animation: sarcasticShake 0.5s ease-in-out;
+}
+
+@keyframes sarcasticShake {
+  0%, 100% { transform: scale(1.05) translateY(-3px) rotate(0deg); }
+  25% { transform: scale(1.05) translateY(-3px) rotate(-2deg); }
+  75% { transform: scale(1.05) translateY(-3px) rotate(2deg); }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.floating-heart {
+  position: absolute;
+  color: rgba(255, 105, 180, 0.3);
+  animation: floatHeart 6s ease-in-out infinite;
+  pointer-events: none;
+  font-size: 20px;
+}
+
+@keyframes floatHeart {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-30px) translateX(10px) rotate(5deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-60px) translateX(-10px) rotate(-5deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-30px) translateX(15px) rotate(3deg);
+    opacity: 0.7;
+  }
+}
+
+.sparkle-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+.sparkle-item {
+  position: absolute;
+  color: #ffd700;
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+.celebration {
+  animation: celebration 1s ease-out;
+}
+
+@keyframes celebration {
+  0% {
+    transform: scale(0.8) rotate(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Mobile-specific styles for the maybe button */
+.maybe-button {
+  /* Remove tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  /* Ensure smooth touch interactions */
+  touch-action: manipulation;
+  /* Add subtle automatic pulse animation */
+  animation: mobilePulse 4s infinite;
+}
+
+@keyframes mobilePulse {
+  0%, 90%, 100% {
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+  }
+  95% {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+    transform: scale(1.01);
+  }
+}
+
+/* Enhanced active state for mobile taps */
+.maybe-button:active {
+  background: linear-gradient(45deg, #ff4757, #ff3742) !important;
+  transform: scale(0.95) !important;
+  box-shadow: 0 3px 10px rgba(255, 71, 87, 0.6) !important;
+}
+
+/* Mobile-specific media queries */
+@media (max-width: 768px) {
+  .card {
+    padding: 30px 20px;
+    margin: 20px;
+  }
+  
+  .valentine-button {
+    font-size: 16px;
+    padding: 12px 25px;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
+  
+  .maybe-button {
+    font-size: 16px;
+    padding: 15px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* Make button more prominent on small screens */
+    min-height: 50px;
+  }
+  
+  .maybe-button:active {
+    transform: scale(0.92) !important;
+  }
+  
+  /* Crying Rat Meme Popup Styles - Mobile Optimized */
+.crying-rat-overlay {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.crying-rat-popup {
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  border-radius: 25px;
+  padding: 25px;
+  text-align: center;
+  max-width: 85vw;
+  max-height: 85vh;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  border: 2px solid #ff4757;
+  overflow: hidden;
+}
+
+.crying-rat-image {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(255, 71, 87, 0.3);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .crying-rat-popup {
+    max-width: 90vw;
+    max-height: 80vh;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .crying-rat-image {
+    max-width: 250px;
+    margin-bottom: 15px;
+  }
+  
+  .crying-rat-popup h2 {
+    font-size: 28px !important;
+  }
+  
+  .crying-rat-popup p {
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .crying-rat-popup {
+    max-width: 95vw;
+    padding: 15px;
+  }
+  
+  .crying-rat-image {
+    max-width: 200px;
+  }
+  
+  .crying-rat-popup h2 {
+    font-size: 24px !important;
+  }
+  
+  .crying-rat-popup p {
+    font-size: 14px !important;
+  }
+}
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .valentine-button:hover {
+    transform: none !important;
+    box-shadow: 0 15px 30px rgba(220, 20, 60, 0.4) !important;
+  }
+  
+  .maybe-button:hover {
+    background: linear-gradient(45deg, #ff69b4, #ffb6c1) !important;
+  }
+}
